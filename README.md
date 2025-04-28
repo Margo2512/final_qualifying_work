@@ -17,5 +17,6 @@ git clone https://github.com/Verg-Avesta/CounTR.git
 https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=sharing
 
 Запустить streamlit:
+
 streamlit run app.py
 
