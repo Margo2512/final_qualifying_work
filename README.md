@@ -12,6 +12,10 @@ git clone https://github.com/Verg-Avesta/CounTR.git
 - в файле /content/CounTR/util/misc.py from torch._six import inf на inf = float('inf')
 - в файле /content/CounTR/util/pos_embed.py omega = np.arange(embed_dim // 2, dtype=np.float) на omega = np.arange(embed_dim // 2, dtype=float)
 
+Скачать веса можно тут: 
+
+https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=sharing
+
 Запустить streamlit:
 streamlit run app.py
 
