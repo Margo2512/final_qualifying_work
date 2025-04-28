@@ -2,8 +2,10 @@ python3 -m venv .venv
 source ./.venv/bin/activate
 pip install -r requirements.txt
 
-Склонировать следующие репозитории: 
+Склонировать следующие репозитории:
+
 git clone https://github.com/nwojke/deep_sort.git
+
 git clone https://github.com/Verg-Avesta/CounTR.git
 Изменить:
 - в файле /content/CounTR/util/misc.py from torch._six import inf на inf = float('inf')
