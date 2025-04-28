@@ -20,3 +20,8 @@ https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=shari
 
 streamlit run app.py
 
+
+Конвертация из YOLO формата в CVAT аннотацию:
+
+fromYOLOtoCVAT.py
+
