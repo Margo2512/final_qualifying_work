@@ -3,7 +3,6 @@ import csv
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-
 class DeepSortToCvatConverter:
     def __init__(self, input_folder, output_xml_file, img_width=None, img_height=None):
         self.input_folder = input_folder
