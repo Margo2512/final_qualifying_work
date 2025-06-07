@@ -6,14 +6,6 @@ from xml.dom import minidom
 
 class DeepSortToCvatConverter:
     def __init__(self, input_folder, output_xml_file, img_width=None, img_height=None):
-        """
-        Класс для конвертации аннотаций DeepSORT (в формате txt файлов) в формат CVAT XML.
-
-        :param input_folder: Папка с txt файлами аннотаций DeepSORT
-        :param output_xml_file: Путь для сохранения результирующего XML файла
-        :param img_width: Ширина изображений (опционально, для нормализации координат)
-        :param img_height: Высота изображений (опционально, для нормализации координат)
-        """
         self.input_folder = input_folder
         self.output_xml_file = output_xml_file
         self.img_width = img_width
