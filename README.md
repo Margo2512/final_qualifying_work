@@ -16,9 +16,15 @@ git clone https://github.com/Verg-Avesta/CounTR.git
 
 https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=sharing
 
-Запустить streamlit:
+Добавьте веса в папку model
+
+Запуск основного сервиса:
 
 streamlit run app.py
+
+Запуск тестов:
+
+PYTHONPATH=путь_к_проекту pytest tests/test_metrics.py -v
 
 
 Конвертация из YOLO формата в CVAT аннотацию:
