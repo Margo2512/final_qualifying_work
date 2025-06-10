@@ -17,7 +17,8 @@ DeepSORT: `git clone https://github.com/nwojke/deep_sort.git`
 CounTR: `git clone https://github.com/Verg-Avesta/CounTR.git`
 
 Также в репозитории CounTR нужно внесте некоторые изменения, чтобы корректно запустить проект:
-- в файле /content/CounTR/util/misc.py: закомментировать строчку`from torch._six import inf` и прописать `inf = float('inf')`
+- в файле /content/CounTR/util/misc.py:
+  закомментировать строчку`from torch._six import inf` и прописать `inf = float('inf')`
 - в файле /content/CounTR/util/pos_embed.py `omega = np.arange(embed_dim // 2, dtype=np.float)` на `omega = np.arange(embed_dim // 2, dtype=float)`
 
 В файле `CounTR/models_mae_cross.py` нужно написать правильный путь, а именно добавить название папки
