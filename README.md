@@ -3,6 +3,7 @@
 Выполните следующий код в терминале, чтобы создать и перейти в виртуальное окружение:
 
 `python3 -m venv .venv`
+
 `source ./.venv/bin/activate`
 
 Установите все необходимые зависимости:
@@ -22,6 +23,7 @@ CounTR: `git clone https://github.com/Verg-Avesta/CounTR.git`
 В файле `CounTR/models_mae_cross.py` нужно написать правильный путь, а именно добавить название папки
 
 `from CounTR.models_crossvit import CrossAttentionBlock`
+
 `from CounTR.util.pos_embed import get_2d_sincos_pos_embed`
 
 
@@ -51,6 +53,8 @@ https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=shari
 Подсчет контролируемых метрик: MOTP и MOTA. А также визуализация сопоставлений истинных ограничивающих рамок с предсказанными лежит в `metrics.ipynb`
 
 В коде используются `cvat_annotations.xml` и `output_botsort`.
+
 `cvat_annotations.xml` - разметка в формате CVAT
+
 `output_botsort` - разметка в расширенном формате YOLO
 
