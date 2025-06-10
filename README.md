@@ -1,26 +1,56 @@
-python3 -m venv .venv
-source ./.venv/bin/activate
-pip install -r requirements.txt
+Данная работа представляет автоматизацию анализа флотации. Вы можете загрузить видеозапись, выбрать интересующий трекер и на выходе будет детальный анализ трекинга пузырей.
 
-Склонировать следующие репозитории:
+Выполните следующий код в терминале, чтобы создать и перейти в виртуальное окружение:
 
-git clone https://github.com/nwojke/deep_sort.git
+`python3 -m venv .venv`
+`source ./.venv/bin/activate`
 
-git clone https://github.com/Verg-Avesta/CounTR.git
+Установите все необходимые зависимости:
 
-Изменить:
-- в файле /content/CounTR/util/misc.py from torch._six import inf на inf = float('inf')
-- в файле /content/CounTR/util/pos_embed.py omega = np.arange(embed_dim // 2, dtype=np.float) на omega = np.arange(embed_dim // 2, dtype=float)
+`pip install -r requirements.txt`
+
+В моем коде используются вызовы следующих методов: DeepSORT и CounTR. Их сначала необходимо склонировать себе в проект:
+
+DeepSORT: `git clone https://github.com/nwojke/deep_sort.git`
+
+CounTR: `git clone https://github.com/Verg-Avesta/CounTR.git`
+
+Также в репозитории CounTR нужно внесте некоторые изменения, чтобы корректно запустить проект:
+- в файле /content/CounTR/util/misc.py: закомментировать строчку`from torch._six import inf` и прописать `inf = float('inf')`
+- в файле /content/CounTR/util/pos_embed.py `omega = np.arange(embed_dim // 2, dtype=np.float)` на `omega = np.arange(embed_dim // 2, dtype=float)`
+
+В файле `CounTR/models_mae_cross.py` нужно написать правильный путь, а именно добавить название папки
+
+`from CounTR.models_crossvit import CrossAttentionBlock`
+`from CounTR.util.pos_embed import get_2d_sincos_pos_embed`
+
 
 Скачайте веса и добавьте в папку model: 
 
 https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=sharing
 
-Запуск основного сервиса: streamlit run app.py
+В данной работе используются следующие существующие методы трекинга:
+- SORT
+- DeepSORT
+- Bot-SORT
+- ByteTrack
 
-Запуск тестов: PYTHONPATH=путь_к_проекту pytest tests/test_metrics.py -v
+Для детекции объектов ограничивающими рамками:
+- YOLOv11
 
-Конвертация из YOLO формата в CVAT аннотацию: fromYOLOtoCVAT.py
+Для детекции центров объектов:
+- CounTR
+- PseCO
 
-Подсчет контролируемых метрик и визуализация сопоставлений истинных ограничивающих рамок с предсказанными: metrics.ipynb
+Запуск основного сервиса: `PYTHONPATH=/home/roman/Desktop/Rita/final_qualifying_work streamlit run app/main.py`
+
+Запуск тестов: `PYTHONPATH=путь_к_проекту pytest tests/test_metrics.py -v`
+
+Конвертация из YOLO формата в CVAT аннотацию: `fromYOLOtoCVAT.py`
+
+Подсчет контролируемых метрик: MOTP и MOTA. А также визуализация сопоставлений истинных ограничивающих рамок с предсказанными лежит в `metrics.ipynb`
+
+В коде используются `cvat_annotations.xml` и `output_botsort`.
+`cvat_annotations.xml` - разметка в формате CVAT
+`output_botsort` - разметка в расширенном формате YOLO
 
