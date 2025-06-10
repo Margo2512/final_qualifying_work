@@ -49,7 +49,7 @@ https://drive.google.com/file/d/1CzYyiYqLshMdqJ9ZPFJyIzXBa7uFUIYZ/view?usp=shari
 - CounTR
 - PseCO
 
-Запуск основного сервиса: `PYTHONPATH=/home/roman/Desktop/Rita/final_qualifying_work streamlit run app/main.py`
+Запуск основного сервиса: `PYTHONPATH=абсолютный_путь_до_проекта streamlit run app/main.py`
 
 Запуск тестов: `PYTHONPATH=путь_к_проекту pytest tests/test_metrics.py -v`
 
